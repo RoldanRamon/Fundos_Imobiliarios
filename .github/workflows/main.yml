@@ -1,27 +1,26 @@
 name: Atualização diária de dados
 
 on:
-  push:
-    branches:
-      - main # ou outra branch que você queira monitorar
-  schedule:
-    - cron: '0 9 * * *' # executa diariamente às 9h (horário de Brasília)
+push:
+branches:
+- main # ou outra branch que você queira monitorar
+schedule:
+- cron: '0 9 * * *' # executa diariamente às 9h (horário de Brasília)
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v1
-      - name: Install packages
-        run: |
-          install.packages("dplyr")
-          install.packages("ggplot2")
-          install.packages("rvest")
-          install.packages("janitor")
-          install.packages("readr")
-          install.packages("stringr")
-      - name: Run script
-        run: Rscript FIIs.R # Substitua pelo caminho para o seu script R
+build:
+runs-on: ubuntu-latest
+steps:
+- name: Checkout
+uses: actions/checkout@v2
+- name: Setup R
+uses: r-lib/actions/setup-r@v1
+- name: Install packages
+run: |
+Rscript -e "install.packages(c('dplyr', 'ggplot2', 'rvest', 'janitor', 'readr', 'stringr'), repos = 'https://cloud.r-project.org')"
+- name: Run script
+run: Rscript FIIs.R # Substitua pelo caminho para o seu script R
+
+
+
+
