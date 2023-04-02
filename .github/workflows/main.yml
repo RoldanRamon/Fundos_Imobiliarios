@@ -1,29 +1,27 @@
-name: Atualizar planilha e enviar por email
+name: Atualização diária de dados
 
 on:
   push:
     branches:
       - main # ou outra branch que você queira monitorar
-    paths:
-      - 'arquivo_atualizado.csv' # ou outra extensão de arquivo que você queira enviar
   schedule:
     - cron: '0 9 * * *' # executa diariamente às 9h (horário de Brasília)
 
 jobs:
-  atualizar_script:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Instalar dependências
+      - name: Setup R
+        uses: r-lib/setup-r@v1
+      - name: Install packages
         run: |
-          Rscript -e 'install.packages("dplyr")'
-          Rscript -e 'install.packages("ggplot2")'
-          Rscript -e 'install.packages("rvest")'
-          Rscript -e 'install.packages("janitor")'
-          Rscript -e 'install.packages("readr")'
-          Rscript -e 'install.packages("stringr")'
-
-      - name: Atualizar planilha
-        run: Rscript atualizar_planilha.R
+          install.packages("dplyr")
+          install.packages("ggplot2")
+          install.packages("rvest")
+          install.packages("janitor")
+          install.packages("readr")
+          install.packages("stringr")
+      - name: Run script
+        run: Rscript ./FIIs.R # Substitua pelo caminho para o seu script R
