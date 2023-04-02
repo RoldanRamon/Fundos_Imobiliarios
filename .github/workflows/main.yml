@@ -24,4 +24,4 @@ jobs:
           install.packages("readr")
           install.packages("stringr")
       - name: Run script
-        run: Rscript ./FIIs.R # Substitua pelo caminho para o seu script R
+        run: Rscript FIIs.R # Substitua pelo caminho para o seu script R
