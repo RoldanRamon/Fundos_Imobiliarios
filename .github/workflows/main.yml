@@ -1,5 +1,4 @@
 name: Atualização diária de dados
-
 on:
   push:
     branches:
@@ -17,8 +16,6 @@ jobs:
 
     - name: Setup R
       uses: r-lib/actions/setup-r@v1
-      with:
-        r-version: '4.1.1'
 
     - name: Setup R Dependencies
       uses: r-lib/r-setup@v2
