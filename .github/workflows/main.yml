@@ -17,5 +17,5 @@ jobs:
       - name: Install packages
         run: Rscript -e "install.packages(c('dplyr', 'ggplot2', 'rvest', 'janitor', 'readr', 'stringr'), repos = 'https://cloud.r-project.org')"
 
-    - name: Run script
-      run: Rscript ../FIIs.R # Substitua pelo caminho para o seu script R
+      - name: Run script
+        run: Rscript ../FIIs.R # Substitua pelo caminho para o seu script R
