@@ -1,0 +1,29 @@
+name: Atualizar planilha e enviar por email
+
+on:
+  push:
+    branches:
+      - main # ou outra branch que você queira monitorar
+    paths:
+      - 'arquivo_atualizado.csv' # ou outra extensão de arquivo que você queira enviar
+  schedule:
+    - cron: '0 9 * * *' # executa diariamente às 9h (horário de Brasília)
+
+jobs:
+  atualizar_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Instalar dependências
+        run: |
+          Rscript -e 'install.packages("dplyr")'
+          Rscript -e 'install.packages("ggplot2")'
+          Rscript -e 'install.packages("rvest")'
+          Rscript -e 'install.packages("janitor")'
+          Rscript -e 'install.packages("readr")'
+          Rscript -e 'install.packages("stringr")'
+
+      - name: Atualizar planilha
+        run: Rscript atualizar_planilha.R
