@@ -21,7 +21,7 @@ jobs:
         r-version: '4.1.1'
 
     - name: Setup R Dependencies
-      uses: r-lib/r-setup@v1
+      uses: r-lib/r-setup@v2
 
     - name: Install packages
       run: |
