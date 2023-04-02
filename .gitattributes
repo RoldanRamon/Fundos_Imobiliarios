@@ -1,0 +1,8 @@
+*.Rmd linguist-detectable=true
+*.R linguist-detectable=true
+*.md linguist-detectable=true
+*.html linguist-detectable=false
+*.sql linguist-detectable=true
+*.css linguist-detectable=true
+*.java linguist-detectable=true
+*.py linguist-detectable=true
