@@ -5,8 +5,6 @@ library(janitor)
 library(readr)
 library(stringr)
 
-#library(mailR)
-
 # Url da página do Fundamentus
 fiis_url <- 'https://fundamentus.com.br/fii_resultado.php'
 
@@ -31,18 +29,3 @@ fiis <- read_html(fiis_url) %>%
 
 # Escrevendo o arquivo em disco
 write.csv(fiis, file = "fiis.csv", row.names = FALSE)
-
-# # Enviando o arquivo por e-mail
-# send.mail(from = "carlitosperini@yahoo.com",
-#           to = "roldanramon83@gmail.com",
-#           subject = "Arquivo de FIIs",
-#           body = "Segue em anexo o arquivo de FIIs atualizado.",
-#           smtp = list(host.name = "smtp.mail.yahoo.com",
-#                       port = 587,
-#                       user.name = "carlitosperini@yahoo.com",
-#                       passwd = "camarada10",
-#                       tls = TRUE,
-#                       ssl = FALSE),
-#           #authenticate = TRUE,
-#           send = TRUE,
-#           attach.files = "fiis.csv")
