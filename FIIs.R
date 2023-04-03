@@ -3,6 +3,7 @@ library(dplyr)
 library(rvest)
 library(janitor)
 library(readr)
+library(stringr)
 
 #library(mailR)
 
