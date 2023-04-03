@@ -30,4 +30,12 @@ jobs:
         run: Rscript -e 'renv::install()'
 
       - name: Run script
-        run: Rscript FIIs.R # Substitua pelo caminho para o seu script R
+        run: Rscript FIIs.R
+        
+      - name: Add files
+        run: |
+          git config --global user.name "roldanramon"
+          git config --global user.email "roldanramon83@gmail.com"
+          git add .
+          git commit -m "Atualizações diárias"
+          git push
