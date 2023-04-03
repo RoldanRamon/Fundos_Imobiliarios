@@ -23,6 +23,9 @@ jobs:
       - name: Initialize renv
         run: Rscript -e 'renv::init()'
 
+      - name: Install libcurl development package
+        run: sudo apt-get install -y libcurl4-openssl-dev
+      
       - name: Install packages
         run: Rscript -e 'renv::install()'
 
