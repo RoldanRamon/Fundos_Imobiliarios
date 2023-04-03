@@ -1,10 +1,9 @@
 rm(list = ls())
 library(dplyr)
-library(ggplot2)
 library(rvest)
 library(janitor)
 library(readr)
-library(stringr)
+
 #library(mailR)
 
 # Url da página do Fundamentus
