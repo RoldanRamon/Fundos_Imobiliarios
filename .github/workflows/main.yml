@@ -36,6 +36,7 @@ jobs:
         run: |
           git config --global user.name "roldanramon"
           git config --global user.email "roldanramon83@gmail.com"
+          git checkout -b cara
           git add .
           git commit -m "Atualizações diárias"
-          git push -u origin main
+          git push -u origin cara
