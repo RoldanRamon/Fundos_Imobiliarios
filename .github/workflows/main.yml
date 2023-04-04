@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: 'main'
         
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
@@ -33,11 +35,12 @@ jobs:
       - name: Run script
         run: Rscript FIIs.R
 
-      - name: Adicionar arquivo ao commit
-        run: git add .
-        
-      - name: Commitar arquivos
-        run: git commit -m "atualizações"
-        
-      - name: subir arquivos
-        run: git push
+      - name: Commit and push changes
+        run: |
+          if [[ "$(git status --porcelain)" != "" ]]; then
+              git config --global user.name 'RoldanRamon'
+              git config --global user.email 'roldanramon83@gmail.com'
+              git add .
+              git commit -m "Auto update dataset"
+              git push
+          fi
