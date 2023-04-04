@@ -43,3 +43,9 @@ jobs:
           git config --local user.name "${GIT_AUTHOR_NAME}"
           git config --local credential.helper store
           git remote set-url origin "https://$CHAVE@github.com/username/repo.git"
+          
+      - name: Add, Commit and Push
+        run: |
+          git add fiis.csv
+          git commit -m "Add fiis.csv"
+          git push origin main
