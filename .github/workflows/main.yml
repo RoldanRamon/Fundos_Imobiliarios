@@ -32,4 +32,8 @@ jobs:
       - name: Run script
         run: Rscript FIIs.R
         
-      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: fiis-daily-report
+          path: fiis.csv
