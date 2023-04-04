@@ -40,4 +40,4 @@ jobs:
           git config --global user.name "RoldanRamon"
           git add .
           git commit -m "Atualizações diárias"
-          git push
+          git push -u origin main
