@@ -1,4 +1,5 @@
 name: Atualização diária de dados
+
 on:
   push:
     branches:
@@ -32,10 +33,11 @@ jobs:
       - name: Run script
         run: Rscript FIIs.R
 
-      - name: Set up Git
-        - name: Adicionar arquivo ao commit
-          run: git add .
-          uses: stefanzweifel/git-auto-commit-action@v4
-          with:
-            commit_message: "Arquivo atualizado"
-            commit_options: "--no-verify"
+      - name: Adicionar arquivo ao commit
+        run: git add .
+        
+      - name: Fazer commit e push
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Arquivo atualizado"
+          commit_options: "--no-verify"
