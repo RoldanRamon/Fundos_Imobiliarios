@@ -42,6 +42,7 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.name "roldanramon"
           git config --global user.email "roldanramon83@gmail.com"
+          git checkout -b atualizacoes_diarias || git checkout atualizacoes_diarias
           git add .
           git commit -m "Atualizações diárias"
           git push
