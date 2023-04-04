@@ -38,6 +38,7 @@ jobs:
         run: |
           git config --global user.name "roldanramon"
           git config --global user.email "roldanramon83@gmail.com"
+          git checkout -b atualizacoes_diarias || git checkout atualizacoes_diarias
           git add .
           git commit -m "Atualizações diárias"
-          git push
+          git push --set-upstream origin atualizacoes_diarias
