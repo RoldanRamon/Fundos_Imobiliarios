@@ -36,8 +36,8 @@ jobs:
       - name: Adicionar arquivo ao commit
         run: git add .
         
-      - name: Fazer commit e push
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Arquivo atualizado"
-          commit_options: "--no-verify"
+      - name: Commitar arquivos
+        run: git commit -m "atualizações"
+        
+      - name: subir arquivos
+        run: git push
