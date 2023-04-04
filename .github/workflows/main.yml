@@ -33,7 +33,7 @@ jobs:
         run: Rscript FIIs.R
 
       - name: Set up Git
-        uses: github-actions/configure-git@v1
+        uses: "peter-evans/configure-github-action@v1.4.2"
         with:
           user.name: RoldanRamon
           user.email: roldanramon83@gmail.com
