@@ -42,7 +42,7 @@ jobs:
           git config --local user.email "${GIT_AUTHOR_EMAIL}"
           git config --local user.name "${GIT_AUTHOR_NAME}"
           git config --local credential.helper store
-          git remote set-url origin "https://$CHAVE@github.com/username/repo.git"
+          git remote set-url origin "https://$CHAVE@github.com/RoldanRamon/Fundos_Imobiliarios.git"
           
       - name: Add, Commit and Push
         run: |
