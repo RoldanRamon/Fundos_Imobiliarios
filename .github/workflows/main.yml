@@ -33,17 +33,9 @@ jobs:
         run: Rscript FIIs.R
 
       - name: Set up Git
-        uses: "peter-evans/configure-github-action@v1.4.2"
-        with:
-          user.name: RoldanRamon
-          user.email: roldanramon83@gmail.com
-          token: ${{ secrets.CHAVE }}
-      - name: Commit files
-        run: |
-          git add fiis.csv
-          git commit -m "Add fiis.csv"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          branch: main
-          directory: ./
+        - name: Adicionar arquivo ao commit
+          run: git add .
+          uses: stefanzweifel/git-auto-commit-action@v4
+          with:
+            commit_message: "Arquivo atualizado"
+            commit_options: "--no-verify"
