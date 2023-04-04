@@ -33,10 +33,15 @@ jobs:
         run: Rscript FIIs.R
         
       - name: Configure Git
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.teste }}
         run: |
+          mkdir -p ~/.ssh
+          echo "${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.name "roldanramon"
           git config --global user.email "roldanramon83@gmail.com"
-          git checkout -b atualizacoes_diarias
           git add .
           git commit -m "Atualizações diárias"
-          git push -u origin atualizacoes_diarias
+          git push
