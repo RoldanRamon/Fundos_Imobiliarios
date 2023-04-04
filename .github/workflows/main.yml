@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-    GITHUB_PAT: ${{ secrets.teste }}
+      SSH_PRIVATE_KEY: ${{ secrets.GITHUB_PAT }}
 
     steps:
       - name: Checkout
