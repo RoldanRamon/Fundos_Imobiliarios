@@ -32,10 +32,14 @@ jobs:
       - name: Run script
         run: Rscript FIIs.R
 
-      - name: Commit and push changes
+      - name: Set up Git
+        env:
+          GIT_AUTHOR_NAME: RoldanRamon
+          GIT_AUTHOR_EMAIL: roldanramon83@gmail.com
+          GIT_COMMITTER_NAME: RoldanRamon
+          GIT_COMMITTER_EMAIL: roldanramon83@gmail.com
         run: |
-          git config --global user.name "RoldanRamon"
-          git config --global user.email "roldanramon83@gmail.com"
-          git add fiis.csv
-          git commit -m "Add fiis.csv"
-          git push origin main
+          git config --local user.email "${GIT_AUTHOR_EMAIL}"
+          git config --local user.name "${GIT_AUTHOR_NAME}"
+          git config --local credential.helper store
+          git remote set-url origin "https://$CHAVE@github.com/username/repo.git"
