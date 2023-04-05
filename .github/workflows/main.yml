@@ -35,12 +35,5 @@ jobs:
       - name: Run script
         run: Rscript FIIs.R
 
-      - name: Commit and push changes
-        run: |
-          if [[ "$(git status --porcelain)" != "" ]]; then
-              git config --global user.name 'RoldanRamon'
-              git config --global user.email 'roldanramon83@gmail.com'
-              git add .
-              git commit -m "Auto update dataset"
-              git push
-          fi
+      - name: Refresh the data
+        run: bash git_add_commit_push.sh "main"
