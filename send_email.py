@@ -2,14 +2,14 @@ import os
 import smtplib
 from email.message import EmailMessage
 
-email = "roldanramon83@gmail.com"
+email = ['EMAIL']
 
-senha_do_email = "gdcryxilokwfjknk"
+senha_do_email = ['SENHA_DO_EMAIL']
 
 msg = EmailMessage()
 msg['Subject']  = 'Enviando e-mail com Python'
-msg['From'] = 'roldanramon83@gmail.com'
-msg['To'] = 'roldanramon83@gmail.com'
+msg['From'] = ['EMAIL']
+msg['To'] = ['roldanramon83@gmail.com','luana-aandrade@hotmail.com']
 msg.set_content("Segue o relatório diário")
 
 with open('fiis.csv', 'rb') as content_file:
