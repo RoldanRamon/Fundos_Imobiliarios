@@ -43,8 +43,11 @@ jobs:
       - name: Install packages
         run: Rscript -e 'renv::restore()'
 
-      - name: Run script
+      - name: Run Rscript to Web Scrapping
         run: Rscript FIIs.R
+        
+      - name: Send Email with Python
+        run: python send_email.py
 
       - name: Commit files
         run: |
