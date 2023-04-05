@@ -3,13 +3,15 @@ name: Atualização diária de dados
 on:
   push:
     branches:
-      - main # ou outra branch que você queira monitorar
+      - main
   schedule:
-    - cron: '0 9 * * *' # executa diariamente às 9h (horário de Brasília)
+    - cron: '0 9 * * *'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout
@@ -19,7 +21,9 @@ jobs:
         
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
-        
+        with:
+          r-version: '4.1.0'
+
       - name: Install renv
         run: Rscript -e 'install.packages("renv")'
         
@@ -29,8 +33,15 @@ jobs:
       - name: Install libcurl development package
         run: sudo apt-get install -y libcurl4-openssl-dev
       
+      - name: Restore R packages cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-renv-${{ hashFiles('renv.lock') }}
+          restore-keys: ${{ runner.os }}-renv-
+
       - name: Install packages
-        run: Rscript -e 'renv::install()'
+        run: Rscript -e 'renv::restore()'
 
       - name: Run script
         run: Rscript FIIs.R
@@ -42,3 +53,4 @@ jobs:
           git add --all
           git commit -am "add data"
           git push 
+
