@@ -35,5 +35,10 @@ jobs:
       - name: Run script
         run: Rscript FIIs.R
 
-      - name: Refresh the data
-        run: bash git_add_commit_push.sh "main"
+      - name: Commit files
+        run: |
+          git config --local user.email "roldanramon83@gmail.com"
+          git config --local user.name "Ramon Roldan de Lara"
+          git add --all
+          git commit -am "add data"
+          git push 
