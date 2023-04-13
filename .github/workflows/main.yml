@@ -47,7 +47,19 @@ jobs:
         run: Rscript FIIs.R
         
       - name: Send Email with Python
-        run: python send_email.py
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL }}
+          password: ${{ secrets.SENHA_DO_EMAIL }}
+          subject: Atualização diária de dados
+          body: A atualização diária de dados foi concluída com sucesso!
+          to: ${{ secrets.EMAIL }}
+          from: ${{ secrets.EMAIL }}
+          content_type: text/plain
+          attachments: |
+            fiis.csv  
 
       - name: Commit files
         run: |
