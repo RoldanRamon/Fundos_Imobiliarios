@@ -54,17 +54,8 @@ jobs:
           username: ${{ secrets.EMAIL }}
           password: ${{ secrets.SENHA_DO_EMAIL }}
           subject: Relatório de Fundos Imobiliários (FIIS)
-          body: |-
-            Oi, tudo bem?
-            
-            Conforme conversamos compartilho relatório que elaborei para entender o cenário atual dos Fundos Imobiliários (FIIS).
-            Este estudo não é uma recomendação de compra ou venda. O mercado financeiro é volátil e envolve riscos, por isso estude bem antes de realizar operações e converse com seu consultor.
-            
-            Desde já agradeço pela atenção e qualquer coisa permaneço à disposição.
-            
-            Cordialmente,
-            Ramon Roldan de Lara.
-          to: ${{ secrets.EMAIL_INTERESSADOS }}
+          body: 'Oi, tudo bem?\n\nConforme conversamos compartilho relatório que elaborei para entender o cenário atual dos Fundos Imobiliários (FIIS).\nEste estudo não é uma recomendação de compra ou venda. O mercado financeiro é volátil e envolve riscos, por isso estude bem antes de realizar operações e converse com seu consultor.\n\nDesde já agradeço pela atenção e qualquer coisa permaneço à disposição.\n\nCordialmente,\nRamon Roldan de Lara.'
+          bcc: ${{ secrets.EMAIL_INTERESSADOS }}
           from: ${{ secrets.EMAIL }}
           content_type: text/plain
           attachments: |
