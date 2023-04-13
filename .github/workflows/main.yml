@@ -1,4 +1,4 @@
-name: Update FIIs Report
+name: FIIs Report
 
 on:
   push:
