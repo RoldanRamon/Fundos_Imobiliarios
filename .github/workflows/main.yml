@@ -55,14 +55,14 @@ jobs:
           password: ${{ secrets.SENHA_DO_EMAIL }}
           subject: Relatório de Fundos Imobiliários (FIIS)
           body: |
-          Prezado(a), tudo bem?
-          
-          Compartilho anexo relatório atualizado dos fundos imobiliários.
-          
-          Desde já agradeço pela atenção e qualquer coisa permaneço a disposição.
-          
-          Cordialmente,
-          Ramon Roldan.
+            Prezado(a), tudo bem?
+            
+            Compartilho anexo relatório atualizado dos fundos imobiliários.
+            
+            Desde já agradeço pela atenção e qualquer coisa permaneço a disposição.
+            
+            Cordialmente,
+            Ramon Roldan.
           to: ${{ secrets.EMAIL_INTERASSADOS }}
           from: ${{ secrets.EMAIL }}
           content_type: text/plain
