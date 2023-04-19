@@ -46,7 +46,7 @@ jobs:
       - name: Run Rscript to Web Scrapping
         run: Rscript FIIs.R
         
-      - name: Send Email with Action
+      - name: Send Email
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
