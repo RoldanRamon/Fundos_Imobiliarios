@@ -1,4 +1,4 @@
-name: FIIs Report 
+name: FIIs Report
 
 on:
   push:
