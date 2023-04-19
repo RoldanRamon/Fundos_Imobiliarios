@@ -55,7 +55,7 @@ jobs:
           password: ${{ secrets.SENHA_DO_EMAIL }}
           subject: Relatório de Fundos Imobiliários (FIIS)
           body: "Ola, tudo bem?"
-          to: ${{ secrets.EMAIL }}
+          to: ${{ secrets.EMAIL_INTERESSADOS }}
           from: ${{ secrets.EMAIL }}
           content_type: text/plain
           attachments: |
