@@ -63,7 +63,8 @@ jobs:
             
             Cordialmente,
             Ramon Roldan.
-          to: ${{ secrets.EMAIL_INTERASSADOS }}
+          to: $${{ secrets.EMAIL }}
+          Bcc: ${{ secrets.EMAIL_INTERASSADOS }}
           from: ${{ secrets.EMAIL }}
           content_type: text/plain
           attachments: |
