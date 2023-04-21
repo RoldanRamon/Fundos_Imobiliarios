@@ -24,7 +24,7 @@ fiis <- read_html(fiis_url) %>%
          cap_rate = str_replace_all(cap_rate, '%', '') %>% parse_number(locale = locale(decimal_mark = ',', grouping_mark = '.')),
          vacancia_media = str_replace_all(vacancia_media, '%', '') %>% parse_number(locale = locale(decimal_mark = ',', grouping_mark = '.')),
          across(where(is.character), as.factor),
-         data_atualizacao = format(Sys.time(), "%Y-%m-%d %H:%M:%S")
+         data_atualizacao = format(Sys.Date(), "%Y-%m-%d")
   )
 
 # Escrevendo o arquivo em disco
