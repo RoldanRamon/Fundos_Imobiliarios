@@ -59,6 +59,27 @@ jobs:
             
             Compartilho anexo relatório atualizado dos fundos imobiliários.
             
+            Abaixo explicação das colunas:
+            
+
+            papel: O código ou identificador do fundo imobiliário.
+            segmento: O segmento ou tipo de investimento em que o fundo imobiliário está enquadrado.
+            cotacao: O valor atual da cota do fundo imobiliário.
+            ffo_yield: O rendimento FFO (Funds From Operations) do fundo imobiliário em relação à cotação.
+            dividend_yield: O rendimento de dividendos do fundo imobiliário em relação à cotação.
+            p_vp: O preço-valor patrimonial (P/VP) do fundo imobiliário.
+            valor_de_mercado: O valor de mercado total do fundo imobiliário.
+            liquidez: A liquidez do fundo imobiliário, indicando a quantidade de negociações realizadas.
+            qtd_de_imoveis: A quantidade de imóveis que compõem o fundo imobiliário.
+            preco_do_m2: O preço médio do metro quadrado dos imóveis do fundo.
+            aluguel_por_m2: O valor médio de aluguel por metro quadrado dos imóveis do fundo.
+            cap_rate: A taxa de capitalização do fundo imobiliário.
+            vacancia_media: A taxa média de vacância dos imóveis do fundo.
+            endereco: O endereço dos imóveis do fundo.
+            data_atualizacao: A data de atualização dos dados na tabela.
+            
+            Aviso: Este estudo não é uma recomendação de compra ou venda, mas sim um estudo teorico de data science. O mercado financeiro é volátil e envolve riscos, por isso estude bem antes de realizar operações e converse com seu consultor.
+            
             Desde já agradeço pela atenção e qualquer coisa permaneço a disposição.
             
             Cordialmente,
@@ -68,7 +89,7 @@ jobs:
           from: ${{ secrets.EMAIL }}
           content_type: text/plain
           attachments: |
-            fiis.csv  
+            fiis.xlsx  
 
       - name: Commit Files
         run: |
