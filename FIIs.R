@@ -4,6 +4,7 @@ library(rvest)
 library(janitor)
 library(readr)
 library(stringr)
+library(writexl)
 
 # Url da página do Fundamentus
 fiis_url <- 'https://fundamentus.com.br/fii_resultado.php'
@@ -28,5 +29,5 @@ fiis <- read_html(fiis_url) %>%
   )
 
 # Escrevendo o arquivo em disco
-writexl::write_xlsx(fiis,"fiis.csv")
+writexl::write_xlsx(fiis,"fiis.xlsx")
 #write.csv(fiis, file = "fiis.csv", row.names = FALSE)
