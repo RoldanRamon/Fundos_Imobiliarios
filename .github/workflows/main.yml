@@ -59,7 +59,18 @@ jobs:
             
             Compartilho anexo relatório atualizado dos fundos imobiliários.
             
-            Abaixo explicação das colunas:
+            Os principais tipos de FiIS são:
+            
+            🏗️ FIIs de tijolo: Fundos que aplicam o seu patrimônio na construção e/ou exploração comercial de imóveis físicos, como galpões, prédios de escritórios, shoppings, etc. 
+
+            📃 FIIs de papel: aplicam o patrimônio dos seus cotistas em instrumentos financeiros do setor imobiliário, tais como CRIs, LCIs e LHs.
+
+            🏙️ Fundos de Fundos (FoFs): são aqueles que aplicam o patrimônio de seus cotistas exclusivamente em cotas de outros Fundos Imobiliários, viabilizando a diversificação com um único investimento.
+
+            🚜 Fiagros: o patrimônio dos cotistas é investido visando financiar as cadeias produtivas agroindustriais por meio de participações, propriedades rurais, terras ou imóveis agrícolas, além de certificados de recebíveis. 
+            
+            
+            Breve explicação das colunas do relatório:
             
 
             papel: O código ou identificador do fundo imobiliário.
