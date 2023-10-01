@@ -1,5 +1,9 @@
 library(tidyverse)
 
+#Para criar pasta do app
+#shinylive::export("myapp", "site", subdir = "app")
+
+
 # Definir os pesos e ranges por segmento
 pesos <- list(
   "Títulos e Val. Mob." = list(
