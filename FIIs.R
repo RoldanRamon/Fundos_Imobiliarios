@@ -9,6 +9,7 @@ library(writexl)
 # Url da página do Fundamentus
 fiis_url <- 'https://fundamentus.com.br/fii_resultado.php'
 
+
 # Lendo a tabela da página
 fiis <- read_html(fiis_url) %>% 
   html_table() %>% 
