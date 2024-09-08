@@ -57,21 +57,21 @@ jobs:
           subject: Relatório de Fundos Imobiliários (FIIS)
           body: |
             Prezado(a), tudo bem?
-
+            
             Compartilho anexo relatório atualizado dos fundos imobiliários.
             
             Os principais tipos de FIIs são:
             
-            🏗️ <b>FIIs de tijolo:</b> Fundos que aplicam o seu patrimônio na construção e/ou exploração comercial de imóveis físicos, como galpões, prédios de escritórios, shoppings, etc. 
-            
+            🏗️ <b>FIIs de tijolo:</b> Fundos que aplicam o seu patrimônio na construção e/ou exploração comercial de imóveis físicos, como galpões, prédios de escritórios, shoppings, etc.
+      
             📃 <b>FIIs de papel:</b> aplicam o patrimônio dos seus cotistas em instrumentos financeiros do setor imobiliário, tais como CRIs, LCIs e LHs.
-            
+      
             🏙️ <b>Fundos de Fundos (FoFs):</b> são aqueles que aplicam o patrimônio de seus cotistas exclusivamente em cotas de outros Fundos Imobiliários, viabilizando a diversificação com um único investimento.
-            
+      
             🚜 <b>Fiagros:</b> o patrimônio dos cotistas é investido visando financiar as cadeias produtivas agroindustriais por meio de participações, propriedades rurais, terras ou imóveis agrícolas, além de certificados de recebíveis.
-            
+      
             Breve explicação das colunas do relatório:
-            
+      
             <b>papel:</b> O código ou identificador do fundo imobiliário.<br>
             <b>segmento:</b> O segmento ou tipo de investimento em que o fundo imobiliário está enquadrado.<br>
             <b>cotacao:</b> O valor atual da cota do fundo imobiliário.<br>
@@ -87,19 +87,19 @@ jobs:
             <b>vacancia_media:</b> A taxa média de vacância dos imóveis do fundo.<br>
             <b>endereco:</b> O endereço dos imóveis do fundo.<br>
             <b>data_atualizacao:</b> A data de atualização dos dados na tabela.
-            
+      
             Aviso: Este estudo não é uma recomendação de compra ou venda, mas sim um estudo teórico de data science. O mercado financeiro é volátil e envolve riscos, por isso estude bem antes de realizar operações e converse com seu consultor.
-            
+      
             Desde já agradeço pela atenção e qualquer coisa permaneço à disposição.
-            
+      
             Cordialmente,  
             Ramon Roldan.
-          to: $${{ secrets.EMAIL }}
+          to: ${{ secrets.EMAIL }}
           Bcc: ${{ secrets.EMAIL_INTERASSADOS }}
           from: ${{ secrets.EMAIL }}
-          content_type: text/plain
+          content_type: text/html
           attachments: |
-            fiis.xlsx  
+            fiis.xlsx
 
       - name: Commit Files
         run: |
