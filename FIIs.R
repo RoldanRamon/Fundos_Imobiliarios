@@ -30,4 +30,4 @@ fiis <- read_html(fiis_url) %>%
 
 # Escrevendo o arquivo em disco
 writexl::write_xlsx(fiis,"fiis.xlsx")
-#write.csv(fiis, file = "fiis.csv", row.names = FALSE)
+write.csv(fiis, file = "fiis.csv", row.names = FALSE)
