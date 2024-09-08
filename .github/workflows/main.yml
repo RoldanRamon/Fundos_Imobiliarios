@@ -55,7 +55,7 @@ jobs:
           username: ${{ secrets.EMAIL }}
           password: ${{ secrets.SENHA_DO_EMAIL }}
           subject: Relatório de Fundos Imobiliários (FIIS)
-          html_body: email_body.html
+          html_body: file://email_body.html
           to: ${{ secrets.EMAIL }}
           Bcc: ${{ secrets.EMAIL_INTERASSADOS }}
           from: ${{ secrets.EMAIL }}
