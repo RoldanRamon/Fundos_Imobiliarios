@@ -56,44 +56,45 @@ jobs:
           password: ${{ secrets.SENHA_DO_EMAIL }}
           subject: Relatório de Fundos Imobiliários (FIIS)
           body: |
-            Prezado(a), tudo bem?
+            **Prezado(a), tudo bem?**
             
             Compartilho anexo relatório atualizado dos fundos imobiliários.
             
             Os principais tipos de FIIs são:
             
-            🏗️ <b>FIIs de tijolo:</b> Fundos que aplicam o seu patrimônio na construção e/ou exploração comercial de imóveis físicos, como galpões, prédios de escritórios, shoppings, etc.
-      
-            📃 <b>FIIs de papel:</b> aplicam o patrimônio dos seus cotistas em instrumentos financeiros do setor imobiliário, tais como CRIs, LCIs e LHs.
-      
-            🏙️ <b>Fundos de Fundos (FoFs):</b> são aqueles que aplicam o patrimônio de seus cotistas exclusivamente em cotas de outros Fundos Imobiliários, viabilizando a diversificação com um único investimento.
-      
-            🚜 <b>Fiagros:</b> o patrimônio dos cotistas é investido visando financiar as cadeias produtivas agroindustriais por meio de participações, propriedades rurais, terras ou imóveis agrícolas, além de certificados de recebíveis.
-      
-            Breve explicação das colunas do relatório:
-      
-            <b>papel:</b> O código ou identificador do fundo imobiliário.<br>
-            <b>segmento:</b> O segmento ou tipo de investimento em que o fundo imobiliário está enquadrado.<br>
-            <b>cotacao:</b> O valor atual da cota do fundo imobiliário.<br>
-            <b>ffo_yield:</b> O rendimento FFO (Funds From Operations) do fundo imobiliário em relação à cotação.<br>
-            <b>dividend_yield:</b> O rendimento de dividendos do fundo imobiliário em relação à cotação.<br>
-            <b>p_vp:</b> O preço-valor patrimonial (P/VP) do fundo imobiliário.<br>
-            <b>valor_de_mercado:</b> O valor de mercado total do fundo imobiliário.<br>
-            <b>liquidez:</b> A liquidez do fundo imobiliário, indicando a quantidade de negociações realizadas.<br>
-            <b>qtd_de_imoveis:</b> A quantidade de imóveis que compõem o fundo imobiliário.<br>
-            <b>preco_do_m2:</b> O preço médio do metro quadrado dos imóveis do fundo.<br>
-            <b>aluguel_por_m2:</b> O valor médio de aluguel por metro quadrado dos imóveis do fundo.<br>
-            <b>cap_rate:</b> A taxa de capitalização do fundo imobiliário.<br>
-            <b>vacancia_media:</b> A taxa média de vacância dos imóveis do fundo.<br>
-            <b>endereco:</b> O endereço dos imóveis do fundo.<br>
-            <b>data_atualizacao:</b> A data de atualização dos dados na tabela.
-      
-            Aviso: Este estudo não é uma recomendação de compra ou venda, mas sim um estudo teórico de data science. O mercado financeiro é volátil e envolve riscos, por isso estude bem antes de realizar operações e converse com seu consultor.
-      
+            🏗️ **FIIs de tijolo**: Fundos que aplicam o seu patrimônio na construção e/ou exploração comercial de imóveis físicos, como galpões, prédios de escritórios, shoppings, etc.
+
+            📃 **FIIs de papel**: Aplicam o patrimônio dos seus cotistas em instrumentos financeiros do setor imobiliário, tais como CRIs, LCIs e LHs.
+
+            🏙️ **Fundos de Fundos (FoFs)**: São aqueles que aplicam o patrimônio de seus cotistas exclusivamente em cotas de outros Fundos Imobiliários, viabilizando a diversificação com um único investimento.
+
+            🚜 **Fiagros**: O patrimônio dos cotistas é investido visando financiar as cadeias produtivas agroindustriais por meio de participações, propriedades rurais, terras ou imóveis agrícolas, além de certificados de recebíveis.
+
+            **Breve explicação das colunas do relatório:**
+
+            **papel**: O código ou identificador do fundo imobiliário.  
+            **segmento**: O segmento ou tipo de investimento em que o fundo imobiliário está enquadrado.  
+            **cotacao**: O valor atual da cota do fundo imobiliário.  
+            **ffo_yield**: O rendimento FFO (Funds From Operations) do fundo imobiliário em relação à cotação.  
+            **dividend_yield**: O rendimento de dividendos do fundo imobiliário em relação à cotação.  
+            **p_vp**: O preço-valor patrimonial (P/VP) do fundo imobiliário.  
+            **valor_de_mercado**: O valor de mercado total do fundo imobiliário.  
+            **liquidez**: A liquidez do fundo imobiliário, indicando a quantidade de negociações realizadas.  
+            **qtd_de_imoveis**: A quantidade de imóveis que compõem o fundo imobiliário.  
+            **preco_do_m2**: O preço médio do metro quadrado dos imóveis do fundo.  
+            **aluguel_por_m2**: O valor médio de aluguel por metro quadrado dos imóveis do fundo.  
+            **cap_rate**: A taxa de capitalização do fundo imobiliário.  
+            **vacancia_media**: A taxa média de vacância dos imóveis do fundo.  
+            **endereco**: O endereço dos imóveis do fundo.  
+            **data_atualizacao**: A data de atualização dos dados na tabela.
+            
+            **Aviso**: Este estudo não é uma recomendação de compra ou venda, mas sim um estudo teórico de data science. O mercado financeiro é volátil e envolve riscos, por isso estude bem antes de realizar operações e converse com seu consultor.
+
             Desde já agradeço pela atenção e qualquer coisa permaneço à disposição.
-      
-            Cordialmente,  
+
+            **Cordialmente,**  
             Ramon Roldan.
+          convert_markdown: true
           to: ${{ secrets.EMAIL }}
           Bcc: ${{ secrets.EMAIL_INTERASSADOS }}
           from: ${{ secrets.EMAIL }}
@@ -108,4 +109,3 @@ jobs:
           git add --all
           git commit -am "add data"
           git push 
-
